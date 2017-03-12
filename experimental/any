@@ -184,7 +184,7 @@ ValueType* any_cast(any* operand)
 template<class ValueType>
 ValueType any_cast(const any& operand)
 {
-  if(operand.type() != typeid(remove_reference<ValueType>::type))
+  if(operand.type() != typeid(typename remove_reference<ValueType>::type))
   {
     throw bad_any_cast();
   }
